@@ -1,4 +1,3 @@
-#Afsy Avent Demo
 
 ##Installation
 
