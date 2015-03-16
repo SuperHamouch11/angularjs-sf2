@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Symfony2 - AngularJS {% endblock %}</title>
+        {%block stylesheets %}
+            {% stylesheets
+                "@bootstrap_css"
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+    </head>
+    <body ng-app="demoApp">
+        {% block body %}
+
+        {% endblock %}
+
+        {% block javascripts %}
+            {% javascripts
+                "@angular_js"
+                "@angular_route_js"
+            %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            <script type="text/javascript" src="{{ asset('bundles/appfrontend/js/app.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/appfrontend/js/controller/posts.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/appfrontend/js/controller/comments.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/appfrontend/js/service/post.js') }}"></script>
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+        {% endblock %}
+    </body>
+</html>

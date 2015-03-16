@@ -1,0 +1,32 @@
+<a href="#/"> Retour au Posts </a>
+
+<div ng-hide="loading">
+    <input type="text" ng-model="query"/>
+    <select ng-model="order">
+        <option value="username">By username</option>
+        <option value="content">By Content</option>
+    </select>
+    <br>
+    
+    <h1>
+        {% verbatim %}
+            {{ title }}
+        {% endverbatim %}
+    </h1>
+    
+    <!--<div ng-init="comments=[{username : 'mohamed', content: 'salut mohamed'}, {username : 'amouna', content: 'salut amouna'}, {username : 'chouayeb', content: 'chouayeb'}]">-->
+    <div ng-repeat="comment in comments| filter:query | orderBy:order">
+        <p>
+            {% verbatim %}
+            {{ comment.username}}<br>
+            {{ comment.content}}
+            {% endverbatim %}
+        </p>
+    </div>
+       
+    <form ng-submit="addComment()">
+        <input type="text" placeholder="name" ng-model="newComment.username" /><br>        
+        <textarea ng-model="newComment.content"></textarea><br>
+        <input class="btn btn-default" type="submit" value="add comment" />        
+    </form>
+</div>

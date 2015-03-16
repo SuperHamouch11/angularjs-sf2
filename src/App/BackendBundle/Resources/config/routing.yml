@@ -1,0 +1,11 @@
+app_api_posts:
+    pattern: /api/posts
+    defaults: { _controller: AppBackendBundle:Default:posts , _format: json}
+    requirements:
+        _method: GET
+
+app_api_comments:
+    pattern: /api/comments/{post}
+    defaults: { _controller: AppBackendBundle:Default:comments , _format: json}
+    requirements:
+        _method: GET

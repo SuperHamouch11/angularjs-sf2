@@ -1,0 +1,17 @@
+<div ng-hide="loading">
+{% verbatim %}
+    <div ng-repeat="post in posts">
+        <h4>{{ post.name}}</h4>
+
+        <p> 
+            {{ post.content}}
+        </p>
+
+        <h4>{{post.comments.length}} commentaires</h4>
+
+        <a href="#/comments/{{ post.id}}"> Voir les commentaires</a>
+
+        <hr>
+    </div>
+{% endverbatim %}
+</div>

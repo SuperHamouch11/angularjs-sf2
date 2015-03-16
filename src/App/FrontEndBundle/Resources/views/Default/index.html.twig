@@ -1,0 +1,11 @@
+{% extends 'AppFrontEndBundle::layout.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h3>AngularJS & Sf2</h3>
+        
+        <div ng-show="loading">Loading ...</div>
+        <div ng-view></div>
+    </div>
+
+{% endblock %}

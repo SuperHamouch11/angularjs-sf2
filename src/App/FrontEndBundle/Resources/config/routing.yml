@@ -1,0 +1,13 @@
+app_front_end_homepage:
+    path:     /
+    defaults: { _controller: AppFrontEndBundle:Default:index }
+    options:
+        expose : true
+        
+app_front_end_posts:
+    path: /web/bundles/appfrontend/partials/posts.html
+    defaults: { _controller: AppFrontEndBundle:Default:postsView , _format: html}
+
+app_front_end_comments:
+    path: /web/bundles/appfrontend/partials/comments.html
+    defaults: { _controller: AppFrontEndBundle:Default:commentsView , _format: html}
