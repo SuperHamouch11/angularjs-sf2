@@ -1,4 +1,4 @@
-app.factory('Post', function ($http, $q) {
+app.factory('Manager', function ($http, $q) {
     console.log('service.js loaded ..');
     var factory = {
         posts: false,
