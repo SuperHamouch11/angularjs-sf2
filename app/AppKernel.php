@@ -24,7 +24,6 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new Sp\BowerBundle\SpBowerBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Bazinga\ExposeTranslationBundle\BazingaExposeTranslationBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             

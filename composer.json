@@ -21,7 +21,6 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "sp/bower-bundle": "dev-master",
         "nelmio/cors-bundle": "~1.0",
-        "friendsofsymfony/jsrouting-bundle": "1.4.1",
         "friendsofsymfony/rest-bundle": "1.1.*",
         "jms/serializer-bundle": "dev-master",
         "willdurand/expose-translation-bundle": "1.1.0",
