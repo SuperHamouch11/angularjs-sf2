@@ -2,18 +2,16 @@
 
 //comments controller
 app.controller('CommentsCtrl', function ($scope, $rootScope, Post, $routeParams) {
-    console.log('commentCtrl loaded ..');
     $rootScope.loading = true;
     $scope.newComment = {};
     
-    Post.getPost($routeParams.id).then(function (post) {
+    $scope.comments = Post.getComments($routeParams.id).then(function (comments) {
         $rootScope.loading = false;
-        $scope.title = post.name;
-        $scope.comments = post.comments;
+        $scope.comments = comments;
     }, function (msg) {
         alert(msg);
     });
-    
+   
     $scope.addComment = function(){
      $scope.comments.push($scope.newComment);
      Post.add($scope.newComment).then(function(){

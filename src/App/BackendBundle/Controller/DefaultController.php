@@ -18,7 +18,15 @@ class DefaultController extends Controller
 
     public function commentsAction($post) {
 
-        $comments = $this->doctrineManager()->getRepository('AppBackendBundle:Comment')->findByPost($post);
+        $postobject = $this->doctrineManager()->getRepository('AppBackendBundle:Post')->find($post);
+
+        if (null === $postobject) {
+
+            throw new NotFoundHttpException("Le post 'id " . $post . " n'existe pas.");
+        }
+
+        $comments = $this->doctrineManager()->getRepository('AppBackendBundle:Comment')->findBy(array('post' => $post));
+        
         $view = View::create();
         $view->setData($comments);
 

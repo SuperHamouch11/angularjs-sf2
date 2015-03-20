@@ -1,6 +1,6 @@
 <?php
 
-namespace App\BackendApiBundle\Entity;
+namespace App\BackendBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -9,11 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  * 
  * Post
  *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="App\BackendApiBundle\Repository\PostRepository")
+ * @ORM\Entity(repositoryClass="App\BackendBundle\Repository\PostRepository")
  */
-class Post
-{
+class Post {
+
     /**
      * @var integer
      *
@@ -37,60 +36,5 @@ class Post
      */
     private $content;
 
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Post
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set content
-     *
-     * @param string $content
-     * @return Post
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
-
-        return $this;
-    }
-
-    /**
-     * Get content
-     *
-     * @return string 
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
+    
 }

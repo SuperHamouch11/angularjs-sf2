@@ -9,11 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  * 
  * Comment
  *
- * @ORM\Table(name="comment")
  * @ORM\Entity(repositoryClass="App\BackendBundle\Repository\CommentRepository")
  */
-class Comment
-{
+class Comment {
+
     /**
      * @var integer
      *
@@ -36,10 +35,10 @@ class Comment
      * @ORM\Column(name="content", type="text")
      */
     private $content;
-    
+
     /**
-     * @ORM\ManyToOne(targetEntity="Post", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(fieldName="post_id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Post")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $post;
 

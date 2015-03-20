@@ -9,11 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  * 
  * Post
  *
- * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="App\BackendBundle\Repository\PostRepository")
  */
-class Post
-{
+class Post {
+
     /**
      * @var integer
      *
@@ -37,6 +36,7 @@ class Post
      */
     private $content;
 
+    
 
     /**
      * Get id

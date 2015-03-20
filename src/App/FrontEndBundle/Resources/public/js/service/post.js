@@ -20,19 +20,22 @@ app.factory('Post', function ($http, $q) {
 
             return deffered.promise;
         },
-        getPost: function (id) {
+        comments: false,
+        getComments: function (id) {
             var deffered = $q.defer();
-            post = {};
-            posts = factory.getPosts().then(function (posts) {
-                angular.forEach(posts, function (value, key) {
-                    if (value.id == id) {
-                        post = value;
-                    }
-                });
-                deffered.resolve(post);
-            }, function (msg) {
-                deffered.reject(msg);
-            });
+            if (factory.comments !== false) {
+                deffered.resolve(factory.comments);
+            }
+            else {
+                $http.get('api/comments/'+id)
+                        .success(function (data, status) {
+                            factory.comments = data;
+                            deffered.resolve(factory.comments);
+                        })
+                        .error(function (data, status) {
+                            deffered.reject('impossible de recuperer les objects');
+                        });
+            }
 
             return deffered.promise;
         },

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\BackendApiBundle\Entity;
+namespace App\BackendBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -9,11 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  * 
  * Comment
  *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="App\BackendApiBundle\Repository\CommentRepository")
+ * @ORM\Entity(repositoryClass="App\BackendBundle\Repository\CommentRepository")
  */
-class Comment
-{
+class Comment {
+
     /**
      * @var integer
      *
@@ -36,67 +35,11 @@ class Comment
      * @ORM\Column(name="content", type="text")
      */
     private $content;
-    
+
     /**
-     * @ORM\ManyToOne(targetEntity="Post", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(fieldName="post_id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Post")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $post;
 
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set username
-     *
-     * @param string $username
-     * @return Comment
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    /**
-     * Get username
-     *
-     * @return string 
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * Set content
-     *
-     * @param string $content
-     * @return Comment
-     */
-    public function setContent($content)
-    {
-        $this->content = $content;
-
-        return $this;
-    }
-
-    /**
-     * Get content
-     *
-     * @return string 
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
 }
