@@ -1,4 +1,9 @@
-services:
+#services:
 #    app_backend.example:
 #        class: App\BackendBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+services:
+    app_backend.form.type.comment:
+        class: App\BackendBundle\Form\Type\CommentType
+        tags:
+            - { name: form.type, alias: comment }

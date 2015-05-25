@@ -70,15 +70,12 @@ swiftmailer:
 
 # fos rest config
 fos_rest:
+    routing_loader:
+        default_format: json
     view:
-        view_response_listener: false
-        failed_validation: HTTP_BAD_REQUEST
-        default_engine: php
         formats:
             json: true
-    body_listener:
-        decoders:
-            json: fos_rest.decoder.json
+            xml : false
 
 # resolve cross domain
 nelmio_cors:

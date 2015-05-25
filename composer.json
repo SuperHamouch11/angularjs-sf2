@@ -24,7 +24,8 @@
         "friendsofsymfony/rest-bundle": "1.1.*",
         "jms/serializer-bundle": "dev-master",
         "willdurand/expose-translation-bundle": "1.1.0",
-        "doctrine/doctrine-fixtures-bundle": "dev-master"
+        "doctrine/doctrine-fixtures-bundle": "dev-master",
+        "friendsofsymfony/user-bundle": "~2.0@dev"
     },
     "scripts": {
         "post-install-cmd": [
